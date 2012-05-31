@@ -1,9 +1,9 @@
-echo "Generating input"
+echo `date +%T` "Generating input"
 python problem4.py $1 $2 > input
-echo "Generating output"
+echo `date +%T` "Generating output"
 cat input | python problem3.py $1 > output
-echo "Sorting input"
+echo `date +%T` "Sorting input"
 sort -g input > input_sorted
-echo "Diffing sorted input and output"
+echo `date +%T` "Diffing sorted input and output"
 diff -s input_sorted output
 rm input input_sorted output
